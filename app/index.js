@@ -67,6 +67,11 @@ module.exports = class extends Generator {
             path.join(destinationRoot, 'package.json'),
             this.answers
         );
+        this.fs.copyTpl(
+            this.templatePath('_app.json'),
+            path.join(destinationRoot, 'app.json'),
+            { projectName: this.projectName }
+        );
         fs.readdir(sourceRoot, (err, items) => {
             for(let item of items) {
                 let fullPath = path.join(sourceRoot, item);
@@ -81,7 +86,7 @@ module.exports = class extends Generator {
      */
     install() {
         this.spawnCommand('cd', [this.projectName]);
-        this.spawnCommand('rm', ['_package.json']);
+        this.spawnCommand('rm', ['_*.json']);
         this.npmInstall();
     }
 
