@@ -1,0 +1,19 @@
+{
+    "name": "generator-gadfly",
+    "version": "0.0.1",
+    "description": "gadfly scaffold",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "files": [
+        "app",
+        "router"
+    ],
+    "keywords": ["yeoman-generator"],
+    "dependencies": {
+        "yeoman-generator": "^1.0.0"
+    },
+    "author": "jinweigang",
+    "license": "ISC"
+}
