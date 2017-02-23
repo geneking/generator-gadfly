@@ -59,16 +59,16 @@ module.exports = class extends Generator {
      * [writing 生成配置文件，copy基础模板]
      */
     writing() {
-        const sourceRoot = this.templatePath();
+        const sourceRoot = this.templatePath('base');
         const destinationRoot = this.destinationRoot(this.projectName);
 
         this.fs.copyTpl(
-            this.templatePath('_package.json'),
+            path.join(sourceRoot, '_package.json'),
             path.join(destinationRoot, 'package.json'),
             this.answers
         );
         this.fs.copyTpl(
-            this.templatePath('_app.json'),
+            path.join(sourceRoot, '_app.json'),
             path.join(destinationRoot, 'app.json'),
             { projectName: this.projectName }
         );
@@ -86,7 +86,8 @@ module.exports = class extends Generator {
      */
     install() {
         this.spawnCommand('cd', [this.projectName]);
-        this.spawnCommand('rm', ['_*.json']);
+        this.spawnCommand('rm', ['_app.json']);
+        this.spawnCommand('rm', ['_package.json']);
         this.npmInstall();
     }
 
