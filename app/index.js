@@ -1,17 +1,25 @@
-var Generator = require('yeoman-generator');
+/**
+ * @description [ Generator入口文件 ]
+ * @author      [ jinweigang ]
+ * @date        [ 2017-02-23 ]
+ */
+
+const Generator = require('yeoman-generator');
 const fs = require('fs');
 const path = require('path');
+const _ = require('lodash');
 
 module.exports = class extends Generator {
 
     constructor(...args) {
         super(...args);
 
-        this.argument('projectName', {
+        this.argument('project-name', {
             type: String,
             desc: "你的项目名称",
             required: true
         });
+
         this.projectName = this.args[0];
         this.conflicter.force = true;//避免检查冲突
     }
@@ -24,31 +32,26 @@ module.exports = class extends Generator {
         type    : 'input',
         name    : 'appName',
         message : '[项目名称]',
-        store   : true,
         default : this.projectName
       },{
         type    : 'input',
         name    : 'appDescription',
         message : '[项目描述]',
-        store   : true,
         default : ''
       },{
         type    : 'input',
         name    : 'authorName',
         message : '[作者姓名]',
-        store   : true,
         default : ''
       },{
         type    : 'input',
         name    : 'authorEmail',
         message : '[作者邮箱]',
-        store   : true,
         default : ''
       },{
         type    : 'input',
         name    : 'appVersion',
         message : '[版    本]',
-        store   : true,
         default : '0.0.1'
       }]).then((answers) => {
           this.answers = answers;
@@ -59,7 +62,7 @@ module.exports = class extends Generator {
      * [writing 生成配置文件，copy基础模板]
      */
     writing() {
-        const sourceRoot = this.templatePath('base');
+        const sourceRoot = this.templatePath();
         const destinationRoot = this.destinationRoot(this.projectName);
 
         this.fs.copyTpl(
@@ -88,13 +91,13 @@ module.exports = class extends Generator {
         this.spawnCommand('cd', [this.projectName]);
         this.spawnCommand('rm', ['_app.json']);
         this.spawnCommand('rm', ['_package.json']);
-        this.npmInstall();
+        //this.npmInstall();
     }
 
     /**
      * [end 启动应用]
      */
     end() {
-        this.spawnCommand('npm', ['start']);
+        //this.spawnCommand('npm', ['start']);
     }
 };

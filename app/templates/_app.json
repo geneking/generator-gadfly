@@ -1,0 +1,14 @@
+{
+    "pageList": [{
+        "title": "目录",
+        "src": "./app/page/pageList/pageList/index.js"
+    }, {
+        "title": "Hello",
+        "src": "./app/page/group/hello/index.js"
+    }],
+    "cdn": {
+        "bucketName": "<%= projectName %>",
+        "accessKeyId": "aa19bf25ac004c418b2b6f9690dd737a",
+        "secretAccessKey": "5ff9801dc6aa4901b1d36f2cf235b607"
+    }
+}

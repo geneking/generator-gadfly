@@ -1,10 +1,12 @@
 /**
- * @description [xxx]
- * @author      [xxx@meituan.com]
- * @date        [xxxx-xx-xx]
+ * @description [ 示例 ]
+ * @author      [ jinweigang@meituan.com ]
+ * @date        [ 2017-02-24 ]
  */
 
 import './index.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 class Hello extends React.Component {
 
