@@ -1,11 +1,13 @@
 {
     "pageList": [{
-        "title": "目录",
-        "src": "./app/page/pageList/pageList/main.js"
-    }, {
-        "title": "Demo",
-        "src": "./app/page/group/hello/main.js"
-    }],
+            "title": "目录",
+            "src": "./app/page/pageList/pageList/index.js"
+        }, {
+            "title": "Hello",
+            "src": "./app/page/group/hello/index.js"
+        }
+        <%= newPage %>
+    ],
     "cdn": {
         "bucketName": "<%= projectName %>",
         "accessKeyId": "aa19bf25ac004c418b2b6f9690dd737a",
