@@ -47,14 +47,25 @@ module.exports = class extends Generator {
      */
     writing() {
         const sourceRoot = this.templatePath();
-        const destinationRoot = this.destinationRoot(`app/page/${this.pageName}`);
+        const destinationRoot = this.destinationRoot();
+        const pageRoot = path.join(destinationRoot, `app/page/${this.pageName}`);
+        const appJsonPath = path.join(destinationRoot, 'app.json');
+        const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf-8'));
+
+        //渲染模板
         this.fs.copyTpl(
             path.join(sourceRoot, 'page.js'),
-            path.join(destinationRoot, `${this.pageName}.js`),
+            path.join(pageRoot, `${this.pageName}/index.js`),
             Object.assign(this.pageInfo, {
                 pageName: this.pageName,
                 createTime: this.createTime
             })
         );
+        //更新app.json页面配置
+        appJson.pageList.push({
+            title: this.pageInfo.pageTitle,
+            src: `./app/page/${this.pageName}/${this.pageName}/index.js`
+        });
+        fs.writeFileSync(appJsonPath, JSON.stringify(appJson), 'utf-8');
     }
 };
