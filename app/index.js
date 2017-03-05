@@ -1,7 +1,7 @@
 /**
- * @description [ Generator入口文件 ]
- * @author      [ jinweigang ]
- * @date        [ 2017-02-23 ]
+ * @author       [jinweigang ]
+ * @date         [2017-02-23 ]
+  * @description [Generator入口文件]
  */
 
 const Generator = require('yeoman-generator');

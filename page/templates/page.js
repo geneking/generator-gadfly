@@ -1,7 +1,7 @@
 /**
- * @description [ <%= pageDescription %> ]
- * @author      [ <%= pageAuthor %> ]
- * @date        [ <%= createTime %> ]
+ * @author      [<%= pageAuthor %>]
+ * @date        [<%= createTime %>]
+ * @description [<%= pageDescription %>]
  */
 
  import './index.scss';

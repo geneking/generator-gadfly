@@ -66,6 +66,6 @@ module.exports = class extends Generator {
             title: this.pageInfo.pageTitle,
             src: `./app/page/${this.pageName}/${this.pageName}/index.js`
         });
-        fs.writeFileSync(appJsonPath, JSON.stringify(appJson), 'utf-8');
+        fs.writeFileSync(appJsonPath, JSON.stringify(appJson), null, 'utf-8');
     }
 };
