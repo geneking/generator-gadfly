@@ -91,7 +91,7 @@ module.exports = class extends Generator {
         this.spawnCommand('cd', [this.projectName]);
         this.spawnCommand('rm', ['_app.json']);
         this.spawnCommand('rm', ['_package.json']);
-        //this.npmInstall();
+        this.npmInstall();
     }
 
     /**
