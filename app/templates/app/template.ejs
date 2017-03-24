@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <title>
@@ -15,15 +14,9 @@
   <div class="header"></div>
   <div class="page-sidebar"></div>
   <div class="page-content container-fluid" id="pageContent"></div>
-
   <script src="http://mssdn.sankuai.com/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/jquery-2.2.2.min.js"></script>
   <script src="http://xs01.meituan.net/kui/1.0.41/js/@waimai/kangarooui.min.js"></script>
-  <script async src="http://mss.sankuai.com/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/bundle.js"></script>
-  <% if (htmlWebpackPlugin.options.extra&&htmlWebpackPlugin.options.extra.js) {%>
-    <% for(var i = 0;i < htmlWebpackPlugin.options.extra.js.length;i++){ %>
-      <script src="<%= htmlWebpackPlugin.options.extra.js[i] %>"></script>
-    <% } %>
-  <% } %>
+  <!--base includes bundle&react&react-dom-->
+  <script async src="http://s3.meituan.net/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/base-8097c1ddb6.js"></script>
 </body>
-
 </html>

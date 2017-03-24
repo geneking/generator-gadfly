@@ -10,6 +10,10 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var MODULE_PATH = path.resolve(ROOT_PATH, 'app/module');
+var os = require('os');
+var UglifyJsParallelPlugin = require('webpack-uglify-parallel');
+var Visualizer = require('webpack-visualizer-plugin');
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 var data = JSON.parse(fs.readFileSync('app.json', 'utf-8'));
 /**
@@ -91,7 +95,9 @@ var commonConfig = {
     filename: "js/[name].js"
   },
   externals: {
-    "jquery": "jQuery"
+    "jquery": "jQuery",
+    "react": "React",
+    "react-dom": "ReactDOM"
   },
   resolve: {
     alias: {
@@ -123,9 +129,17 @@ module.exports = merge(commonConfig, {
     filename: "js/[name]-[chunkhash:10].js"
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true
-    }),
+      new UglifyJsParallelPlugin({
+          workers: os.cpus().length,
+          output: {
+              ascii_only: true,
+          },
+          compress: {
+              warnings: false,
+          },
+          sourceMap: false
+      }),
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh-cn/),
     new WebpackMd5Hash()
   ]
 });

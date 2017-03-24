@@ -83,7 +83,9 @@ var commonConfig = {
     filename: "js/[name].js"
   },
   externals: {
-    "jquery": "jQuery"
+    "jquery": "jQuery",
+    "react": "React",
+    "react-dom": "ReactDOM"
   },
   resolve: {
     alias: {
@@ -120,6 +122,7 @@ module.exports = merge(commonConfig, {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|zh-cn/),
     new OpenBrowserPlugin({
       url: 'http://127.0.0.1:8808/pageList/pageList.html'
     })
