@@ -98,6 +98,6 @@ module.exports = class extends Generator {
      * [end 启动应用]
      */
     end() {
-        //this.spawnCommand('npm', ['start']);
+        this.spawnCommand('npm', ['start']);
     }
 };
