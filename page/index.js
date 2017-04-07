@@ -61,6 +61,15 @@ module.exports = class extends Generator {
                 createTime: this.createTime
             })
         );
+        this.fs.copyTpl(
+            path.join(sourceRoot, 'index.scss'),
+            path.join(pageRoot, `${this.pageName}/index.scss`),
+            Object.assign(this.pageInfo, {
+                pageName: this.pageName,
+                createTime: this.createTime
+            })
+        );
+
         //更新app.json页面配置
         appJson.pageList.push({
             title: this.pageInfo.pageTitle,
