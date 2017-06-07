@@ -1,6 +1,6 @@
 {
     "name": "generator-gadfly",
-    "version": "1.0.5",
+    "version": "1.0.7",
     "description": "gadfly scaffold",
     "main": "index.js",
     "scripts": {
@@ -8,17 +8,16 @@
     },
     "files": [
         "app",
-        "router"
+        "page"
     ],
     "keywords": [
         "yeoman-generator"
     ],
     "dependencies": {
-        "yeoman-generator": "^1.0.0"
+        "yeoman-generator": "^1.0.0",
+        "moment": "^2.17.1"
     },
     "author": "jinweigang",
     "license": "ISC",
-    "devDependencies": {
-        "moment": "^2.17.1"
-    }
+    "devDependencies": {}
 }
