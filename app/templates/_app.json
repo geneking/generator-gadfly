@@ -1,10 +1,10 @@
 {
     "pageList": [{
         "title": "目录",
-        "src": "./app/page/pageList/pageList/index.js"
+        "src": "./app/page/PageList/PageList/Index.js"
     }, {
         "title": "Hello",
-        "src": "./app/page/group/hello/index.js"
+        "src": "./app/page/Hello/Hello/Index.js"
     }],
     "cdn": {
         "bucketName": "<%= projectName %>",

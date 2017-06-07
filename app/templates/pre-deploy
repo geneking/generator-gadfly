@@ -1,5 +1,4 @@
 #!/bin/bash
-#by gongrenji@sankuai.com
 
 #检测系统信息
 echo "PWD:" `pwd`

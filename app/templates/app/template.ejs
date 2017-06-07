@@ -5,18 +5,20 @@
   <title>
     <%= htmlWebpackPlugin.options.title || '标题'%>
   </title>
-
-  <link rel="dns-prefetch" href="http://mss.sankuai.com/">
+  <link rel="dns-prefetch" href="http://s3.meituan.net/">
   <link href="http://xs01.meituan.net/kui/1.0.41/css/@waimai/kangarooui.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="header"></div>
   <div class="page-sidebar"></div>
-  <div class="page-content container-fluid" id="pageContent"></div>
+  <div class="page-content container-fluid" id="page-content"></div>
+  <script type="text/javascript">
+    window.CURRENTWEB = '';
+  </script>
   <script src="http://mssdn.sankuai.com/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/jquery-2.2.2.min.js"></script>
-  <script src="http://xs01.meituan.net/kui/1.0.41/js/@waimai/kangarooui.min.js"></script>
+  <script async src="http://xs01.meituan.net/kui/1.0.41/js/@waimai/kangarooui.min.js"></script>
   <!--base includes bundle&react&react-dom-->
-  <script async src="http://s3.meituan.net/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/base-8097c1ddb6.js"></script>
+  <script async src="http://s3.meituan.net/v1/mss_c4375b35f5cb4e678b5b55a48c40cf9d/waimai-mfe/base-40873c3441.js"></script>
 </body>
 </html>

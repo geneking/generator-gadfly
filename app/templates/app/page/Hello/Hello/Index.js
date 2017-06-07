@@ -4,7 +4,7 @@
  * @date        [ 2017-02-24 ]
  */
 
-import './index.scss';
+import './Index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
