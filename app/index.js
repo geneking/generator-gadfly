@@ -73,7 +73,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             path.join(sourceRoot, '_app.json'),
             path.join(destinationRoot, 'app.json'),
-            { projectName: this.projectName }
+            { projectName: this.projectName.replace('_', '-') }
         );
         fs.readdir(sourceRoot, (err, items) => {
             for(let item of items) {

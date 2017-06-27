@@ -60,7 +60,7 @@ var appJsonObj = getHtmlPluginArr();
 var commonConfig = {
     entry: appJsonObj.entryObj,
     module: {
-        loaders: [{
+        rules: [{
             test: /\.html$/,
             loader: "html-loader?minimize=false"
         }, {
@@ -74,7 +74,7 @@ var commonConfig = {
             loader: 'url-loader?limit=10240&name=../images/[name]-[hash:10].[ext]'
         }, {
             test: /\.js$|\.jsx$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
                 presets: ['es2015', 'react'],
