@@ -52,7 +52,7 @@ module.exports = class extends Generator {
         type    : 'input',
         name    : 'appVersion',
         message : '[版    本]',
-        default : '0.0.1'
+        default : '1.0.0'
       }]).then((answers) => {
           this.answers = answers;
       });
@@ -73,7 +73,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             path.join(sourceRoot, '_app.json'),
             path.join(destinationRoot, 'app.json'),
-            { projectName: this.projectName.replace('_', '-') }
+            { projectName: this.projectName.replace(/_/g, '-') }
         );
         fs.readdir(sourceRoot, (err, items) => {
             for(let item of items) {
