@@ -103,13 +103,15 @@ module.exports = merge(commonConfig, {
         host: process.env.HOST,
         port: "8808",
         proxy: {
-            '/sifttag/**': {
-                //target: 'http://10.20.60.234:8686/', //dev
-                target: 'http://10.20.93.199:8686/', //qa
+            '/brain/**': {
+                //target: 'http://develop.brain.waimai.sankuai.com/', //dev
+                target: 'http://brain.waimai.test.sankuai.com/', //qa
+                changeOrigin: true,
                 secure: false
             },
             '/iframe_poi_archives/*': {
                 target: 'http://data.waimai.sankuai.com',
+                hangeOrigin: true,
                 secure: false
             }
         }
